@@ -1,11 +1,37 @@
 {
 	"compilerOptions": {
-		"outDir": "./dist/",
-		"noImplicitAny": true,
-		"target": "es5",
-		"lib": ["es5", "es6", "dom"],
+		"target": "ES6",
+		"lib": [
+				"es6",
+				"dom",
+				"es2017",
+				"esnext.WeakRef"
+			],
+		"sourceMap": true,
+		"allowJs": false,
+		"noEmit": false,
 		"jsx": "react",
-		"allowJs": true,
-		"moduleResolution": "node"
-	}
+		"experimentalDecorators": true,
+		"moduleResolution": "node",
+		"importHelpers": true,
+		"forceConsistentCasingInFileNames": true,
+		"noImplicitReturns": true,
+		"noImplicitThis": true,
+		"noImplicitAny": true,
+		"strictNullChecks": false,
+		"extendedDiagnostics": true,
+		"noUnusedLocals": false,
+		"noUnusedParameters": false,
+		"skipLibCheck": true,
+		"typeRoots": [
+			"./node_modules/@types"
+		],
+		"baseUrl": ".",
+		"outDir": "./dist/",
+		"declaration": false
+	},
+	"exclude": [
+		"node_modules",
+		"dist"
+	]
 }
