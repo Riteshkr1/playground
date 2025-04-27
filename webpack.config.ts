@@ -28,14 +28,19 @@ const config: webpack.Configuration = {
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: [
+          prod ? MiniCssExtractPlugin.loader : 'style-loader',
+          'css-loader'
+        ],
       },
     ]
   },
   devtool: prod ? undefined : 'source-map',
   plugins: [
     htmlPlugin,
-    new MiniCssExtractPlugin(),
+    prod && new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css',
+    })
   ]
 };
 

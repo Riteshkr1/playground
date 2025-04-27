@@ -1,0 +1,23 @@
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+.containers {
+    width: 100%;
+    display: flex;
+    gap: 2px;
+    flex-direction: column;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to next row */
+    gap: 2px; /* Space between items */
+  }
+  
+  .gridItem {
+    background: lightblue;
+    padding: 10px;
+    flex: 1 1 calc(10% - 10px); /* 3 columns */
+    text-align: center;
+  }
