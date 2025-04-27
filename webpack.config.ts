@@ -1,12 +1,12 @@
 import * as webpack from 'webpack';
 import 'webpack-dev-server';
-import * as HtmlWebPackPlugin from 'html-webpack-plugin';
-import * as MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import * as path from 'path';
 
 const prod = process.env.NODE_ENV === 'production';
 
-const htmlPlugin = new HtmlWebPackPlugin({
+const htmlPlugin = new HtmlWebpackPlugin({
   template: './src/index.html',
   inject: true, // Automatically inject script tags for bundled files
 });
