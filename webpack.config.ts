@@ -32,7 +32,7 @@ const config: webpack.Configuration = {
       {
         test: /\.less$/, // For modular LESS files
         use: [
-          MiniCssExtractPlugin.loader, // Extract the compiled LESS into a separate CSS file
+          prod ? MiniCssExtractPlugin.loader : 'style-loader', // Extract the compiled LESS into a separate CSS file
           {
             loader: 'css-loader',
             options: {

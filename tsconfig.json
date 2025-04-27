@@ -30,8 +30,10 @@
 		"outDir": "./dist/",
 		"declaration": true // Generate declaration files for type definitions
 	},
+	"include": ["**/*.ts", "**/*.tsx"], // Include all TypeScript files
 	"exclude": [
 		"node_modules",
 		"dist"
-	]
+	],
+	
 }
