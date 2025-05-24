@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 2px
+}
+.grid{
+    display: flex;
+    gap: 2px;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.gridItem{
+    flex: 1 1 200px;
+    background-color: #EDEDED;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    min-height: 30px;
+}

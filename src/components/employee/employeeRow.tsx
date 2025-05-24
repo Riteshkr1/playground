@@ -7,14 +7,17 @@ interface IEmployeeRowProps {
     onHandleSave: (updatedEmploy: IEmployee) => void;
 }
 export const EmployeeRow = React.memo((prop: IEmployeeRowProps) => {
-    const { emp, onHandleSave } = prop;
-    const [isEdit, setIsEdit] = React.useState(false);
+    const {emp, onHandleSave} = prop;
+    const [canSave, setCanSave] = React.useState(false);
     const [employee, setEmployee] = React.useState<IEmployee>(emp);
-    const { id, name, contact, dep, salary } = employee;
-    
+    const {id, name, contact, dep, salary} = employee;
+    React.useEffect(() => {
+        setEmployee(emp);
+        setCanSave(false);
+    }, [emp]);
     const handleEdit = () => {
-        setIsEdit(!isEdit);
-        if(isEdit){
+        setCanSave((pre) => !pre);
+        if(canSave){
             onHandleSave(employee);
             console.log('save');
         }
@@ -27,14 +30,14 @@ export const EmployeeRow = React.memo((prop: IEmployeeRowProps) => {
     }
     return (
         <div className={styles.grid}>
-            {!isEdit && <>
+            {!canSave && <>
                 <div className={styles.gridItem}>{id}</div>
                 <div className={styles.gridItem}>{name}</div>
                 <div className={styles.gridItem}>{contact}</div>
                 <div className={styles.gridItem}>{dep}</div>
                 <div className={styles.gridItem}>{salary}</div>
             </>}
-            {isEdit && <>
+            {canSave && <>
                 <div className={styles.gridItem}>{id}</div>
                 <div className={styles.gridItem}>
                     <input type="text" onChange={(ev)=> handleChange('name', ev.target.value)} value={name}/>
@@ -52,7 +55,7 @@ export const EmployeeRow = React.memo((prop: IEmployeeRowProps) => {
             
 
             <div className={styles.gridItem}>
-                <button onClick={handleEdit}>{isEdit ? 'Save' : 'Edit'}</button>
+                <button onClick={handleEdit}>{canSave ? 'Save' : 'Edit'}</button>
             </div>
             
         </div>

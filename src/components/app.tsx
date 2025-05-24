@@ -1,13 +1,11 @@
 import * as React from "react";
-import { Employee } from "./employee/emplyee";
+import { Emp } from "./newEmp/emp";
 
 export interface IAppProps {}
 
 
-
-export default function IApp(props: IAppProps) {
+export const App: React.FC<React.PropsWithChildren<IAppProps>> = (props: IAppProps) => {
   return (
-    <Employee />
+    <Emp />
   );
-
 }

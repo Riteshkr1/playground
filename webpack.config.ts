@@ -1,6 +1,8 @@
-import * as webpack from "webpack";
-import * as HtmlWebPackPlugin from "html-webpack-plugin";
-import * as MiniCssExtractPlugin from "mini-css-extract-plugin";
+import webpack from "webpack";
+import HtmlWebPackPlugin from "html-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import * as path from "path";
+import "webpack-dev-server";
 
 const prod = process.env.NODE_ENV === 'production';
 
@@ -36,6 +38,7 @@ const config: webpack.Configuration = {
     ]
   },
   devtool: prod ? undefined : 'source-map',
+  
   plugins: [
     htmlPlugin,
     prod && new MiniCssExtractPlugin({

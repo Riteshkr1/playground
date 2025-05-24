@@ -11,13 +11,12 @@
 
 .grid {
     display: flex;
-    flex-wrap: wrap; /* Allows items to wrap to next row */
-    gap: 2px; /* Space between items */
+    gap: 2px;
   }
   
   .gridItem {
     background: lightblue;
     padding: 10px;
-    flex: 1 1 calc(10% - 10px); /* 3 columns */
+    flex: 1 1 200px;
     text-align: center;
   }
