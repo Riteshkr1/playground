@@ -1,7 +1,7 @@
-import * as React from "react";
-
+import styles from './app.module.less';
 export interface IAppProps {}
 
-export default function IApp(props: IAppProps) {
-  return <h1>Hello React Typescript!</h1>;
+export default function IApp() {
+  console.log('Hello React Typescript!');
+  return <h1 className={styles.heading}>Hello React Typescript!</h1>;
 }

@@ -1,11 +1,37 @@
 {
 	"compilerOptions": {
+		"target": "ES6", // Using ES6 for modern features
+		"lib": [
+			"es6",
+			"dom",
+			"es2017",
+			"esnext.WeakRef"
+		],
+		"sourceMap": true, // Helpful for debugging
+		"allowJs": false, // Only TypeScript files allowed
+		"noEmit": false, // Emit compiled files to the output directory
+		"jsx": "react-jsx", // New JSX transform for React (no need to import React)
+		"experimentalDecorators": true, // Useful if you're using decorators
+		"moduleResolution": "node", // Preferred for resolving modules in Node.js
+		"importHelpers": true, // Reduces the size of output by using helpers
+		"forceConsistentCasingInFileNames": true, // Ensures consistent casing in file names
+		"noImplicitReturns": true, // Ensures all functions have explicit return types
+		"noImplicitThis": true, // Ensures correct `this` handling in functions
+		"noImplicitAny": true, // Avoids the implicit `any` type
+		"strictNullChecks": true, // More strict handling of `null` and `undefined`
+		"extendedDiagnostics": true, // Provides more detailed error messages
+		"noUnusedLocals": true, // Detects unused local variables
+		"noUnusedParameters": true, // Detects unused function parameters
+		"skipLibCheck": true, // Speeds up build by skipping type checking of declaration files
+		"typeRoots": [
+			"./node_modules/@types"
+		],
+		"baseUrl": ".",
 		"outDir": "./dist/",
-		"noImplicitAny": true,
-		"target": "es5",
-		"lib": ["es5", "es6", "dom"],
-		"jsx": "react",
-		"allowJs": true,
-		"moduleResolution": "node"
-	}
+		"declaration": true // Generate declaration files for type definitions
+	},
+	"exclude": [
+		"node_modules",
+		"dist"
+	]
 }
