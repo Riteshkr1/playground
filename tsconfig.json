@@ -1,37 +1,40 @@
 {
 	"compilerOptions": {
-		"target": "ES6", // Using ES6 for modern features
-		"lib": [
-			"es6",
-			"dom",
-			"es2017",
-			"esnext.WeakRef"
-		],
-		"sourceMap": true, // Helpful for debugging
-		"allowJs": false, // Only TypeScript files allowed
-		"noEmit": false, // Emit compiled files to the output directory
-		"jsx": "react-jsx", // New JSX transform for React (no need to import React)
-		"experimentalDecorators": true, // Useful if you're using decorators
-		"moduleResolution": "node", // Preferred for resolving modules in Node.js
-		"importHelpers": true, // Reduces the size of output by using helpers
-		"forceConsistentCasingInFileNames": true, // Ensures consistent casing in file names
-		"noImplicitReturns": true, // Ensures all functions have explicit return types
-		"noImplicitThis": true, // Ensures correct `this` handling in functions
-		"noImplicitAny": true, // Avoids the implicit `any` type
-		"strictNullChecks": true, // More strict handling of `null` and `undefined`
-		"extendedDiagnostics": true, // Provides more detailed error messages
-		"noUnusedLocals": true, // Detects unused local variables
-		"noUnusedParameters": true, // Detects unused function parameters
-		"skipLibCheck": true, // Speeds up build by skipping type checking of declaration files
-		"typeRoots": [
-			"./node_modules/@types"
-		],
-		"baseUrl": ".",
-		"outDir": "./dist/",
-		"declaration": true // Generate declaration files for type definitions
+	  "target": "ES6",  // Using ES6 for modern features
+	  "lib": [
+		"es6",          // Basic ES6 features
+		"dom",          // DOM APIs (for web development)
+		"esnext"        // Latest ECMAScript features
+	  ],
+	  "sourceMap": true,  // Helpful for debugging
+	  "allowJs": false,   // Only TypeScript files allowed
+	  "noEmit": false,    // Emit compiled files to the output directory
+	  "jsx": "react-jsx",  // New JSX transform for React (no need to import React)
+	  "experimentalDecorators": true,  // Useful if you're using decorators
+	  "moduleResolution": "node",  // Preferred for resolving modules in Node.js
+	  "importHelpers": true,   // Reduces the size of output by using helpers
+	  "forceConsistentCasingInFileNames": true,  // Ensures consistent casing in file names
+	  "noImplicitReturns": true,  // Ensures all functions have explicit return types
+	  "noImplicitThis": true,     // Ensures correct `this` handling in functions
+	  "noImplicitAny": true,      // Avoids the implicit `any` type
+	  "strictNullChecks": true,   // More strict handling of `null` and `undefined`
+	  "extendedDiagnostics": false,  // Disabled for faster builds, only needed for debugging
+	  "noUnusedLocals": true,    // Detects unused local variables
+	  "noUnusedParameters": true, // Detects unused function parameters
+	  "skipLibCheck": true,      // Speeds up build by skipping type checking of declaration files
+	  "typeRoots": [
+		"./node_modules/@types"  // Custom types from node_modules
+	  ],
+	  "baseUrl": ".",  // Base directory for non-relative module imports
+	  "outDir": "./dist/",  // Output directory for compiled files
+	  "declaration": false,  // Disabled for non-library projects
+	  "esModuleInterop": true,  // Allow default imports from non-ES modules
+	  "resolveJsonModule": true  // Allow importing JSON files as modules
 	},
+	"include": ["**/*.ts", "**/*.tsx"],  // Include all TypeScript files
 	"exclude": [
-		"node_modules",
-		"dist"
+	  "node_modules",  // Exclude the node_modules directory
+	  "dist"           // Exclude the dist directory
 	]
-}
+  }
+  

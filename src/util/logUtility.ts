@@ -1,18 +1,19 @@
-export class LogUtility {
-  private static isLoggingEnabled: boolean = false;
+// logUtility.ts
+let isLoggingEnabled: boolean = false;  // Feature flag
 
-  // Function to set the logging flag
-  static setLoggingFlag(flag: boolean): void {
-    this.isLoggingEnabled = flag;
-  }
+// Function to set the logging flag
+export function setLoggingFlag(flag: boolean): void {
+  isLoggingEnabled = flag;
+}
 
-  // Override console.log based on the feature flag
-  static init(): void {
-    const originalConsoleLog = console.log;
-    console.log = (...args: any[]): void => {
-      if (this.isLoggingEnabled) {
-        originalConsoleLog.apply(console, args);  // Log to the console if enabled
-      }
-    };
-  }
+// Function to initialize the logging behavior
+export function initLogging(): void {
+  const originalConsoleLog = console.log;
+
+  // Override the console.log method
+  console.log = (...args: any[]): void => {
+    if (isLoggingEnabled) {
+      originalConsoleLog.apply(console, args);  // Log to the console if enabled
+    }
+  };
 }

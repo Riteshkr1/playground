@@ -1,7 +1,15 @@
-import styles from './app.module.less';
+import { useContext } from 'react';
+import { ThemeContext } from '../context/ThemeContext';
 export interface IAppProps {}
 
 export default function IApp() {
-  console.log('Hello React Typescript!');
-  return <h1 className={styles.heading}>Hello React Typescript!</h1>;
+  const { theme, toggleTheme } = useContext(ThemeContext);
+  return (
+    <div style={{ padding: '20px' }}>
+      <h1>Current Theme: {theme} 🌗</h1>
+      <button className="button" onClick={toggleTheme}>
+        Toggle Theme
+      </button>
+    </div>
+  );
 }
